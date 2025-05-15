@@ -9,11 +9,11 @@ use App\Models\User;
 class DashboardController extends Controller
 {
     public function index()
-    {
-        return view('admin.dashboard', [
-            'totalDelivery' => Task::count(),
-            'ongoing' => Task::where('status', 'on_delivery')->count(),
-            'totalDriver' => User::count(),
-        ]);
-    }
+{
+    $ongoing = \App\Models\Task::where('status', 'on_delivery')->count();
+    $completed = \App\Models\Task::where('status', 'completed')->count();
+    $driverCount = \App\Models\User::count();
+
+    return view('admin.dashboard', compact('ongoing', 'completed', 'driverCount'));
+}
 }

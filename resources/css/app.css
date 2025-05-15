@@ -1,0 +1,76 @@
+.login-page {
+    background-color: #0a5f0a;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.login-page .login-container {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    width: 350px;
+    max-width: 90%;
+    box-sizing: border-box;
+}
+
+.login-page .login-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0a5f0a;
+    margin-bottom: 12px;
+}
+
+.login-page .login-subtitle {
+    text-align: center;
+    color: #999;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.login-page input.form-control {
+    background-color: #f6f6f6;
+    border: none;
+    border-radius: 6px;
+    height: 45px;
+    padding-left: 14px;
+    font-size: 14px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.login-page input.form-control:focus {
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 5px #0a5f0a;
+}
+
+.login-page button.btn-login {
+    width: 100%;
+    background-color: #0a5f0a;
+    color: #fff;
+    border: none;
+    padding: 12px 0;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.login-page button.btn-login:hover {
+    background-color: #094e09;
+}
+
+.login-page .error-message {
+    color: #cc0000;
+    font-size: 13px;
+    margin-bottom: 15px;
+    text-align: center;
+}
