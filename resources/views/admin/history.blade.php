@@ -13,7 +13,7 @@
       <td>#{{ $history->id }}</td>
       <td>{{ $history->status }}</td>
       <td>
-        <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#detailModal{{ $history->id }}">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailModal{{ $history->id }}">
           Detail
         </button>
       </td>

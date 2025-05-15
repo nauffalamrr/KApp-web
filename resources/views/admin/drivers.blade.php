@@ -1,11 +1,13 @@
 @extends('layouts.app')
 @section('content')
-<h3>Drivers</h3>
+<h3 class="mb-4 fw-bold">Drivers</h3>
 
 <!-- Button Add Driver -->
-<button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addDriverModal">
-  Add Driver
-</button>
+<div class="d-flex justify-content-end mb-3">
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addDriverModal">
+    Add Driver
+  </button>
+</div>
 
 <table class="table">
   <thead>
@@ -52,6 +54,15 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        @if(session('form') === 'add' && $errors->any())
+          <div class="alert alert-danger">
+            <ul class="mb-0">
+              @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
         <input type="text" name="name" class="form-control mb-2" placeholder="Name" required>
         <input type="text" name="username" class="form-control mb-2" placeholder="Username" required>
         <input type="password" name="password" class="form-control" placeholder="Password" required>
@@ -75,6 +86,15 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        @if(session('form') === 'edit' && $errors->any())
+          <div class="alert alert-danger">
+            <ul class="mb-0">
+              @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
         <input type="text" name="name" id="edit-name" class="form-control mb-2" placeholder="Name" required>
         <input type="text" name="username" id="edit-username" class="form-control mb-2" placeholder="Username" required>
         <input type="password" name="password" class="form-control" placeholder="New Password (leave blank if no change)">
@@ -86,6 +106,20 @@
     </form>
   </div>
 </div>
+
+@if(session('form') === 'add' && $errors->any())
+<script>
+  var addModal = new bootstrap.Modal(document.getElementById('addDriverModal'));
+  addModal.show();
+</script>
+@endif
+
+@if(session('form') === 'edit' && $errors->any())
+<script>
+  var editModal = new bootstrap.Modal(document.getElementById('editDriverModal'));
+  editModal.show();
+</script>
+@endif
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {

@@ -1,10 +1,13 @@
+body {
+    font-family: "Poppins", sans-serif;
+}
+
 .login-page {
     background-color: #0a5f0a;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
 }
 
 .login-page .login-container {
@@ -73,4 +76,13 @@
     font-size: 13px;
     margin-bottom: 15px;
     text-align: center;
+}
+
+.nav-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+.nav-link:hover {
+    font-weight: bold;
 }
